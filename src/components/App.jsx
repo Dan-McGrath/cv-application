@@ -47,8 +47,16 @@ function App() {
   return (
     isSubmitted ? 
     <>
-      <p>{firstName}</p>
+      <p>{firstName} {lastName}</p>
+      <p>{phone}</p>
+      <p>{email}</p>
+      <p>{schoolName}</p>
+      <p>{degree}</p>
+      <p>{graduationDate}</p>
       <p>{companyName}</p>
+      <p>{positionTitle}</p>
+      <p>{responsibilities}</p>
+      <p>{startDate}-{endDate}</p>
       <Button onClick={editHandler}/>
     </> :
     <>
