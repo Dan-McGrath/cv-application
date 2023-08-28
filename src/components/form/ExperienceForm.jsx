@@ -39,7 +39,7 @@ export default function ExperienceForm() {
             <Label htmlFor='position-title' text='Position Title:' />
             <Input type='text' name='position-title' idName='position-title' text='Position Title' handler={positionTitleHandler} value={positionTitle}  />
             <Label htmlFor='responsibilities' text='Responsibilities: ' />
-            <textarea type='textarea' name='responsibilities' idName='responsibilities' placeholder='Responsibilities...' handler={responsibilitiesHandler} value={responsibilities}  />
+            <textarea type='textarea' name='responsibilities' id='responsibilities' placeholder='Responsibilities...' onChange={responsibilitiesHandler} value={responsibilities}  />
             <Label htmlFor='start-date' text='Start Date: ' />
             <Input type='date' name='start-date' idName='start-date' text='00/00' handler={startDateHnadler} value={startDate}  />
             <Label htmlFor='end-date' text='End Date: ' />
