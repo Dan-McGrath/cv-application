@@ -3,18 +3,9 @@ import { useState } from "react";
 import { Input, Label } from "./input.jsx";
 import Button from "./button.jsx";
 
-export default function PersonalForm() {
+export default function PersonalForm({ firstName, lastName, phone, email, handleFirstName, handleLastName, handleEmail, handlePhone}) {
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
 
-    const handleFirstName = (e) => setFirstName(e.target.value);
-    const handleLastName = (e) => setLastName(e.target.value);
-    const handleEmail = (e) => setEmail(e.target.value);
-    const handlePhone = (e) => setPhone(e.target.value);
-    
     const handleEdit = () => {
         setIsSubmitted(!isSubmitted)
     }

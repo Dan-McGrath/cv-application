@@ -2,15 +2,8 @@ import { useState } from "react";
 import { Input, Label } from "./input.jsx";
 import Button from "./button.jsx";
 
-export default function EducationForm() {
+export default function EducationForm({schoolName, degree, graduationDate, handleSchoolName, handleDegree, handleGraduationDate}) {
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [schoolName, setSchoolName] = useState('');
-    const [degree, setDegree] = useState('');
-    const [graduationDate, setGraduationDate] = useState('');
-
-    const schoolNameHandler = (e) => setSchoolName(e.target.value);
-    const degreeHandler = (e) => setDegree(e.target.value);
-    const graduationDateHandler = (e) => setGraduationDate(e.target.value)
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -32,11 +25,11 @@ export default function EducationForm() {
         </> :
         <form onSubmit={submitHandler}>
             <Label htmlFor='school-name' text='School Name: ' />
-            <Input type='text' name='school-name' idName='school-name' text='School Name' value={schoolName} handler={schoolNameHandler}/>
+            <Input type='text' name='school-name' idName='school-name' text='School Name' value={schoolName} handler={handleSchoolName}/>
             <Label htmlFor='degree' text='Degree: ' />
-            <Input type='text' name='degree' idName='degree' text='Degree Name' value={degree} handler={degreeHandler}/>
+            <Input type='text' name='degree' idName='degree' text='Degree Name' value={degree} handler={handleDegree}/>
             <Label htmlFor='graduation-date' text='Graduation Date: ' />
-            <Input type='date' name='graduation-date' idName='graduation-date' value={graduationDate} handler={graduationDateHandler}/>
+            <Input type='date' name='graduation-date' idName='graduation-date' value={graduationDate} handler={handleGraduationDate}/>
             <input type='submit' />
         </form>        
     )
